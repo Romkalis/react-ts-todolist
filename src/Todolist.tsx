@@ -1,5 +1,6 @@
 import {FilterValueType} from "./App.tsx";
 import {ChangeEvent, KeyboardEvent, useState} from "react";
+import {AddItemForm} from "./components/AddItemForm.tsx";
 
 export interface TaskType {
   id: string;
@@ -20,48 +21,17 @@ export interface TodolistProps {
 }
 
 export function Todolist({todolistId, title, tasks, removeTask, changeFilter, addTask, changeTaskStatus, filter, removeTodolist}: TodolistProps) {
-
-  const [taskText, setTaskText] = useState('')
-  const [error, setError] = useState<string | null>(null)
-
   const statusHandler = (evt) => {
     changeFilter((evt.target.textContent).toLowerCase(), todolistId)
   }
-  const onInputTaskHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-    setTaskText(evt.target.value)
-    setError('')
-  }
-  const onKeydownHandler = (evt: KeyboardEvent<HTMLInputElement>) => {
-    if (evt.key === 'Enter') {
-      addTaskHandler()
-    }
-  }
-  const addTaskHandler = () => {
-    if (taskText.trim() === '') {
-      setError('Field is required')
-      return
-    }
-    addTask(taskText.trim(), todolistId)
-    setTaskText('')
-  }
-
   const onTodolistRemove = () => {
     removeTodolist(todolistId)
   }
 
   return (
     <div>
-
       <h3>{title} <button onClick={onTodolistRemove}>❌</button></h3>
-      <div>
-        <input onChange={onInputTaskHandler}
-               onKeyDown={onKeydownHandler}
-               className={error ? 'error' : ''}
-               type="text"
-               value={taskText}/>
-        <button onClick={addTaskHandler}>+</button>
-        {error && <span className="error-message">{error}</span>}
-      </div>
+      <AddItemForm title={title} addTask={addTask} todolistId={todolistId} removeTodolist={removeTodolist}/>
       <ul>
         {
           tasks.map(task => {
@@ -78,7 +48,6 @@ export function Todolist({todolistId, title, tasks, removeTask, changeFilter, ad
           })
         }
       </ul>
-
       <div>
         <button className={filter === 'all' ? 'active-filter' : ''}
                 onClick={statusHandler}
@@ -94,3 +63,5 @@ export function Todolist({todolistId, title, tasks, removeTask, changeFilter, ad
     </div>
   )
 }
+
+
