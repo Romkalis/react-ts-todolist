@@ -1,10 +1,11 @@
 import {ChangeEvent, KeyboardEvent, useState} from "react";
+import {IconButton, TextField} from "@mui/material";
+import {PostAdd} from "@mui/icons-material";
 
 type AddItemFormProps = {
-  addTask: (fn: Function, id: string) => void;
-  todolistId: string;
+  addItem: (title: string) => void;
 }
-export const AddItemForm = ({ addTask, todolistId }) => {
+export const AddItemForm: React.FC<AddItemFormProps> = ({addItem}) => {
 
   const [taskText, setTaskText] = useState('')
   const [error, setError] = useState<string | null>(null)
@@ -24,20 +25,30 @@ export const AddItemForm = ({ addTask, todolistId }) => {
       setError('Field is required')
       return
     }
-    addTask(taskText.trim(), todolistId)
+    addItem(taskText.trim())
     setTaskText('')
   }
 
   return (
     <>
       <div>
-        <input onChange={onChangeHandler}
-               onKeyDown={onKeydownHandler}
-               className={error ? 'error' : ''}
-               type="text"
-               value={taskText}/>
-        <button onClick={addTaskHandler}>+</button>
-        {error && <span className="error-message">{error}</span>}
+        <TextField
+          id="outlined-basic"
+          variant="outlined"
+          helperText={'Enter Value'}
+          size={'small'}
+          onChange={onChangeHandler}
+          onKeyDown={onKeydownHandler}
+          className={error ? 'error' : ''}
+          error={!!error}
+          type="text"
+          value={taskText}/>
+
+
+        <IconButton onClick={addTaskHandler} variant={'contained'} size={'small'}>
+          <PostAdd color={'primary'}/>
+        </IconButton>
+
       </div>
     </>
   )
