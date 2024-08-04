@@ -1,21 +1,37 @@
-import {TodolistsType} from "../App.tsx";
+import {FilterValueType, TodolistsType} from "../App.tsx";
 import {v1} from "uuid";
 
-
-type ActionType = {
-  type: string;
-  [key: string]: any;
+export type RemoveTodolistActionType = {
+  type: 'REMOVE-TODOLIST';
+  id: string;
+}
+export type AddTodolistActionType = {
+  type: 'ADD-TODOLIST';
+  title: string;
+}
+export type ChangeTodolistTitleActionType = {
+  type: 'CHANGE-TODOLIST-TITLE';
+  id: string;
+  title: string;
+}
+export type ChangeTodolistFilterActionType = {
+  type: 'CHANGE-TODOLIST-FILTER';
+  id: string;
+  filter: FilterValueType;
 }
 
-export const todolistsReducer = (state: Array<TodolistsType>, action: ActionType): Array<TodolistsType> => {
+type ActionsTypes =
+  RemoveTodolistActionType
+  | AddTodolistActionType
+  | ChangeTodolistTitleActionType
+  | ChangeTodolistFilterActionType
+
+export const todolistsReducer = (state: Array<TodolistsType>, action: ActionsTypes): Array<TodolistsType> => {
   switch (action.type) {
-
     case 'REMOVE-TODOLIST':
-      return state.filter(tl => tl.id !== action.id);
-
+      return [...state.filter(tl => tl.id !== action.id)]
     case 'ADD-TODOLIST':
       return [...state, {id: v1(), title: action.title, filter: 'all'}]
-
     case 'CHANGE-TODOLIST-TITLE': {
       const todolist = state.find(tl => tl.id === action.id)
       if (todolist) {
@@ -38,3 +54,4 @@ export const todolistsReducer = (state: Array<TodolistsType>, action: ActionType
       throw new Error('Error in user reducer/ Check Action name')
   }
 }
+
