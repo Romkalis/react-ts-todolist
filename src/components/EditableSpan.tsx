@@ -34,7 +34,7 @@ export const EditableSpan: React.FC<EditableSpanPropsType> = ({title, onChange})
     ?
     <TextField
       id="outlined-basic"
-      label="Outlined"
+      label="Input Text"
       variant="outlined"
       size={'small'}
       onKeyDown={onEnter}
