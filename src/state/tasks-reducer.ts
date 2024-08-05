@@ -1,18 +1,19 @@
 import {v1} from "uuid";
 import {TasksObjectType} from "../App.tsx";
+import {AddTodolistActionType, RemoveTodolistActionType} from "./todolist-reducer.ts";
 
 
-type AddNewTaskActionType ={
-   type: 'ADD-NEW-TASK';
-   id: string;
-   title: string;
-   isDone: boolean;
+type AddNewTaskActionType = {
+  type: 'ADD-NEW-TASK';
+  id: string;
+  title: string;
+  isDone: boolean;
 }
-type ChangeTaskActionType ={
-   type: 'CHANGE-TASK-STATUS';
-   id: string;
-   isDone: boolean;
-   taskId: string;
+type ChangeTaskActionType = {
+  type: 'CHANGE-TASK-STATUS';
+  id: string;
+  isDone: boolean;
+  taskId: string;
 }
 type RemoveTypeActionType = {
   type: 'DELETE-TASK';
@@ -26,10 +27,16 @@ type ChangeTaskTitleActionType = {
   title: string;
 }
 
-type ActionType = AddNewTaskActionType | ChangeTaskActionType | RemoveTypeActionType | ChangeTaskTitleActionType
+type ActionType =
+  AddNewTaskActionType
+  | ChangeTaskActionType
+  | RemoveTypeActionType
+  | ChangeTaskTitleActionType
+  | AddTodolistActionType
+  | RemoveTodolistActionType
 
 export const tasksReducer = (state: TasksObjectType, action: ActionType): TasksObjectType => {
-  switch(action.type) {
+  switch (action.type) {
     case "ADD-NEW-TASK": {
       const newTask = {
         id: v1(),
@@ -42,7 +49,7 @@ export const tasksReducer = (state: TasksObjectType, action: ActionType): TasksO
     case 'CHANGE-TASK-STATUS': {
       // const changeTaskStatus = (id: string, isDone: boolean, tasksId: string)
       const todolist = state[action.id]
-      const updatedTodolist = todolist.map( task => task.id === action.taskId ? {...task, isDone: action.isDone} : task)
+      const updatedTodolist = todolist.map(task => task.id === action.taskId ? {...task, isDone: action.isDone} : task)
 
       return {...state, [action.id]: updatedTodolist}
     }
@@ -65,11 +72,22 @@ export const tasksReducer = (state: TasksObjectType, action: ActionType): TasksO
       }
       break
     }
-    default: throw new Error ('Wrong action type in tasks reducer')
+    case 'ADD-TODOLIST': {
+      const stateCopy = {...state}
+      stateCopy[action.id] = []
+      return {...stateCopy}
+    }
+    case 'REMOVE-TODOLIST': {
+      const stateCopy = {...state}
+      delete stateCopy[action.id]
+      return stateCopy
+    }
+    default:
+      throw new Error('Wrong action type in tasks reducer')
   }
 }
 
-export const AddNewTaskActionCreator = (todolistId, taskTitle): AddNewTaskActionType => {
+export const addNewTaskActionCreator = (todolistId, taskTitle): AddNewTaskActionType => {
   return {
     type: 'ADD-NEW-TASK',
     id: todolistId,
@@ -77,7 +95,7 @@ export const AddNewTaskActionCreator = (todolistId, taskTitle): AddNewTaskAction
     isDone: false,
   }
 }
-export const ChangeTaskStatusActionCreator = (todolistId, status, taskId): ChangeTaskActionType => {
+export const changeTaskStatusActionCreator = (todolistId, status, taskId): ChangeTaskActionType => {
   return {
     type: 'CHANGE-TASK-STATUS',
     id: todolistId,
