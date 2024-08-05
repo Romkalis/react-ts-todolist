@@ -40,7 +40,6 @@ export const todolistsReducer = (state: Array<TodolistsType>, action: ActionsTyp
       }
       break
     }
-
     case 'CHANGE-TODOLIST-FILTER': {
       const todolist = state.find(tl => tl.id === action.id)
       if (todolist) {
@@ -49,22 +48,20 @@ export const todolistsReducer = (state: Array<TodolistsType>, action: ActionsTyp
       }
       break
     }
-
     default:
       throw new Error('Error in user reducer/ Check Action name')
   }
 }
 
-export const RemoveTodolistAC = (todolistId: string): RemoveTodolistActionType => {
+export const removeTodolistAC = (todolistId: string): RemoveTodolistActionType => {
   return {type: 'REMOVE-TODOLIST', id: todolistId}
 }
-export const AddTodolistAC = (todolistTitle: string): AddTodolistActionType => {
+export const addTodolistAC = (todolistTitle: string): AddTodolistActionType => {
   return {type: 'ADD-TODOLIST', title: todolistTitle}
 }
-export const ChangeTodolistTitleAC = (todolistId: string, todolistTitle: string): ChangeTodolistTitleActionType => {
+export const changeTodolistTitleAC = (todolistId: string, todolistTitle: string): ChangeTodolistTitleActionType => {
   return {type: 'CHANGE-TODOLIST-TITLE', title: todolistTitle, id: todolistId}
 }
-
-export const ChangeTodolistFilterAC = (todolistId: string, todolistFilter: FilterValueType): ChangeTodolistFilterActionType => {
+export const changeTodolistFilterAC = (todolistId: string, todolistFilter: FilterValueType): ChangeTodolistFilterActionType => {
   return {type: 'CHANGE-TODOLIST-FILTER', id: todolistId, filter: todolistFilter}
 }
