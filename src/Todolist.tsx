@@ -15,7 +15,7 @@ export type TodolistProps = {
   todolistId: string;
   title: string;
   tasks: TaskType[];
-  removeTask: (id: string, todolistId: string) => void;
+  removeTask: (id: string, taskId: string) => void;
   changeFilter: (value: string, todolistId: string) => void;
   addItem: (str: string, todolistId: string) => void;
   changeTaskStatus: (id: string, isDone: boolean, todolistId: string) => void;
@@ -60,7 +60,7 @@ export function Todolist({
       <ul>
         {
           tasks?.map(task => {
-            const onRemoveHandler = () => removeTask(task.id, todolistId)
+            const onRemoveHandler = () => removeTask(todolistId, task.id)
             const onChangeTaskStatus = (evt: ChangeEvent<HTMLInputElement>) => {
               changeTaskStatus(task.id, evt.target.checked, todolistId)
             }

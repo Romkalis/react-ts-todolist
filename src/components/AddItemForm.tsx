@@ -19,7 +19,6 @@ export const AddItemForm: React.FC<AddItemFormProps> = ({addItem}) => {
       addTaskHandler()
     }
   }
-
   const addTaskHandler = () => {
     if (taskText.trim() === '') {
       setError('Field is required')
