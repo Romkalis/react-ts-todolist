@@ -1,4 +1,4 @@
-import {TaskType, Todolist} from "./Todolist.tsx";
+import {TaskType, Todolist} from "./components/Todolist.tsx";
 import {useState} from "react";
 import {v1} from "uuid";
 import {AddItemForm} from "./components/AddItemForm.tsx";

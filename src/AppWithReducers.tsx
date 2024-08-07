@@ -1,4 +1,4 @@
-import {TaskType, Todolist} from "./Todolist.tsx";
+import {TaskType, Todolist} from "./components/Todolist.tsx";
 import {useReducer} from "react";
 import {v1} from "uuid";
 import {AddItemForm} from "./components/AddItemForm.tsx";
@@ -83,8 +83,6 @@ function AppWithReducers() {
     dispatchToTasksReducer(action)
   }
   const removeTask = (id, tasksId) => {
-    const action = deleteTaskActionCreator(id, tasksId)
-    console.log(action)
     dispatchToTasksReducer(deleteTaskActionCreator(id, tasksId))
   }
 

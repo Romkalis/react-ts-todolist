@@ -1,7 +1,7 @@
-import {FilterValueType} from "./App.tsx";
+import {FilterValueType} from "../App.tsx";
 import React, {ChangeEvent} from "react";
-import {AddItemForm} from "./components/AddItemForm.tsx";
-import {EditableSpan} from "./components/EditableSpan.tsx";
+import {AddItemForm} from "./AddItemForm.tsx";
+import {EditableSpan} from "./EditableSpan.tsx";
 import {Button, ButtonGroup, IconButton, Checkbox} from "@mui/material";
 import {Delete} from "@mui/icons-material";
 
@@ -66,8 +66,6 @@ export function Todolist({
             }
             const onChangeTaskTitle = (value) => {
               changeTaskTitle(task.id, todolistId, value)
-
-              console.log('PRINTING: ', value)
             }
             return (
               <li className={task.isDone ? 'is-done' : ''} key={task.id}>

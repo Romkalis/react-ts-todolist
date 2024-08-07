@@ -40,7 +40,8 @@ export const EditableSpan: React.FC<EditableSpanPropsType> = ({title, onChange})
       onKeyDown={onEnter}
       onBlur={onEditableDeactivated}
       value={inputTitle}
+      onChange={onInputHandler}
       autoFocus/>
 
-    : <span onDoubleClick={onEditableActive}>{title}</span>
+    : <span onDoubleClick={onEditableActive} >{title}</span>
 }
