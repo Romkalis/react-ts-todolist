@@ -1,5 +1,9 @@
 import {FilterValueType, TodolistsType} from "../App.tsx";
 import {v1} from "uuid";
+// import {useReducer} from "react";
+import {
+  // tasksReducer,
+  todolistId1, todolistId2} from "./tasks-reducer.ts";
 
 export type RemoveTodolistActionType = {
   type: 'REMOVE-TODOLIST';
@@ -27,7 +31,12 @@ type ActionsTypes =
   | ChangeTodolistTitleActionType
   | ChangeTodolistFilterActionType
 
-export const todolistsReducer = (state: Array<TodolistsType>, action: ActionsTypes): Array<TodolistsType> => {
+
+const initialState: Array<TodolistsType> = [
+  {id: todolistId1, title: 'What to buy', filter: 'all',},
+  {id: todolistId2, title: 'What to Learn', filter: 'all',}
+]
+export const todolistsReducer = (state: Array<TodolistsType> = initialState, action: ActionsTypes): Array<TodolistsType> => {
   switch (action.type) {
     case 'REMOVE-TODOLIST':
       return [...state.filter(tl => tl.id !== action.id)]
@@ -50,7 +59,7 @@ export const todolistsReducer = (state: Array<TodolistsType>, action: ActionsTyp
       break
     }
     default:
-      throw new Error('Error in user reducer/ Check Action name')
+      return state
   }
 }
 

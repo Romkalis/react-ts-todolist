@@ -35,7 +35,27 @@ type ActionType =
   | AddTodolistActionType
   | RemoveTodolistActionType
 
-export const tasksReducer = (state: TasksObjectType, action: ActionType): TasksObjectType => {
+
+export const todolistId1 = v1()
+export const todolistId2 = v1()
+
+
+const initalState = {
+  [todolistId1]: [
+    {id: v1(), title: "Css", isDone: true},
+    {id: v1(), title: "JS", isDone: true},
+    {id: v1(), title: "React", isDone: false,},
+    {id: v1(), title: "REST Api", isDone: false,},
+    {id: v1(), title: "GraphQL", isDone: false,},
+    {id: v1(), title: "Zustand", isDone: false,},
+  ],
+  [todolistId2]: [
+    {id: v1(), title: "Bread", isDone: true},
+    {id: v1(), title: "Hammer", isDone: false,},
+  ],
+}
+
+export const tasksReducer = (state: TasksObjectType = initalState, action: ActionType): TasksObjectType => {
   switch (action.type) {
     case "ADD-NEW-TASK": {
       const newTask = {
@@ -83,7 +103,7 @@ export const tasksReducer = (state: TasksObjectType, action: ActionType): TasksO
       return stateCopy
     }
     default:
-      throw new Error('Wrong action type in tasks reducer')
+      return state
   }
 }
 
