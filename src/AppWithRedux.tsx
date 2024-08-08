@@ -42,18 +42,6 @@ function AppWithRedux() {
     const action = changeTodolistTitleAC(todolistId, title)
     dispatch(action)
   }
-  const removeTodolist = (todolistId: string) => {
-    const action = removeTodolistAC(todolistId)
-    dispatch(action)
-  }
-  const changeFilter = (value: FilterValueType, todolistId: string) => {
-    const action = changeTodolistFilterAC(value, todolistId)
-    dispatch(action)
-  }
-  const addNewTask = (title: string, todolistId: string) => {
-    const action = addNewTaskActionCreator(todolistId, title)
-    dispatch(action)
-  }
   const changeTaskStatus = (taskId: string, isDone: boolean, todolistId: string) => {
     const action = changeTaskStatusActionCreator(todolistId, isDone, taskId)
     dispatch(action)
@@ -85,7 +73,6 @@ function AppWithRedux() {
         <Grid container>
           <AddItemForm addItem={addNewTodoList}/>
         </Grid>
-
         <Grid container spacing={3}>
 
           {
@@ -107,13 +94,7 @@ function AppWithRedux() {
                       todolistId={todolist.id}
                       title={todolist.title}
                       tasks={tasksToTodolist}
-                      removeTask={removeTask}
-                      changeFilter={changeFilter}
-                      addItem={addNewTask}
-                      changeTaskStatus={changeTaskStatus}
-                      changeTaskTitle={changeTaskTitle}
                       filter={todolist.filter}
-                      removeTodolist={removeTodolist}
                       changeTodolistTitle={changeTodolistTitle}
                     />
                   </Paper>

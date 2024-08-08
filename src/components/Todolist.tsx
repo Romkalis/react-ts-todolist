@@ -4,6 +4,13 @@ import {AddItemForm} from "./AddItemForm.tsx";
 import {EditableSpan} from "./EditableSpan.tsx";
 import {Button, ButtonGroup, IconButton, Checkbox} from "@mui/material";
 import {Delete} from "@mui/icons-material";
+import {useDispatch, useSelector} from "react-redux";
+import {changeTodolistFilterAC, removeTodolistAC} from "../state/todolist-reducer.ts";
+import {
+  addNewTaskActionCreator,
+  changeTaskStatusActionCreator, changeTaskTitleActionCreator,
+  deleteTaskActionCreator
+} from "../state/tasks-reducer.ts";
 
 export interface TaskType {
   id: string;
@@ -15,11 +22,8 @@ export type TodolistProps = {
   todolistId: string;
   title: string;
   tasks: TaskType[];
-  removeTask: (id: string, taskId: string) => void;
   changeFilter: (value: string, todolistId: string) => void;
   addItem: (str: string, todolistId: string) => void;
-  changeTaskStatus: (id: string, isDone: boolean, todolistId: string) => void;
-  changeTaskTitle: (id: string, todolistId: string, newTitle: string) => void;
   filter: FilterValueType;
   removeTodolist: (taskId: string) => void;
   changeTodolistTitle: (title: string, todolistId: string) => void
@@ -29,24 +33,27 @@ export function Todolist({
                            todolistId,
                            title,
                            tasks,
-                           removeTask,
-                           changeFilter,
-                           addItem,
-                           changeTaskStatus,
                            filter,
-                           removeTodolist,
-                           changeTaskTitle,
                            changeTodolistTitle
                          }: TodolistProps) {
+
+  const dispatch = useDispatch()
+
   const statusHandler = (evt) => {
-    changeFilter((evt.target.textContent).toLowerCase(), todolistId)
+    const text = (evt.target.textContent).toLowerCase()
+    // changeFilter(text, todolistId)
+    dispatch(changeTodolistFilterAC(text, todolistId))
   }
   const onTodolistRemove = () => {
-    removeTodolist(todolistId)
+    dispatch(removeTodolistAC(todolistId))
   }
   const addTask = (title: string) => {
-    addItem(title, todolistId)
+    dispatch(addNewTaskActionCreator(todolistId, title))
   }
+
+  const tasks1 = useSelector <Array<TaskType>>( state => state.tasks[todolistId])
+  // console.log('TASKS IS: ', tasks1)
+
 
   return (
     <div>
@@ -60,13 +67,10 @@ export function Todolist({
       <ul>
         {
           tasks?.map(task => {
-            const onRemoveHandler = () => removeTask(todolistId, task.id)
-            const onChangeTaskStatus = (evt: ChangeEvent<HTMLInputElement>) => {
-              changeTaskStatus(task.id, evt.target.checked, todolistId)
-            }
-            const onChangeTaskTitle = (value) => {
-              changeTaskTitle(task.id, todolistId, value)
-            }
+            const onRemoveHandler = () => dispatch(deleteTaskActionCreator(todolistId, task.id))
+            const onChangeTaskStatus = (evt: ChangeEvent<HTMLInputElement>) => dispatch(changeTaskStatusActionCreator(todolistId, evt.target.checked, task.id))
+            const onChangeTaskTitle = (title) =>  dispatch(changeTaskTitleActionCreator(todolistId, task.id, title))
+
             return (
               <li className={task.isDone ? 'is-done' : ''} key={task.id}>
                 <Checkbox onChange={onChangeTaskStatus}
@@ -82,7 +86,6 @@ export function Todolist({
         }
       </ul>
       <div>
-
 
         <ButtonGroup variant="outlined" aria-label="Basic button group" size={'small'}>
           <Button variant={filter === 'all' ? 'contained' : 'outlined'}
