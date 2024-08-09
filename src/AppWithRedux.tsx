@@ -4,18 +4,12 @@ import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography}
 import {Menu} from "@mui/icons-material";
 import {
   addTodolistAC,
-  changeTodolistFilterAC,
   changeTodolistTitleAC,
-  removeTodolistAC,
 } from "./state/todolist-reducer.ts";
-import {
-  addNewTaskActionCreator,
-  changeTaskStatusActionCreator,
-  changeTaskTitleActionCreator,
-  deleteTaskActionCreator,
-} from "./state/tasks-reducer.ts";
+
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootState} from "./state/store.ts";
+import React, {useCallback} from "react";
 
 export type FilterValueType = 'all' | 'active' | 'completed';
 export type TodolistsType = {
@@ -27,35 +21,30 @@ export type TasksObjectType = {
   [key: string]: Array<TaskType>
 }
 
+
+
 function AppWithRedux() {
 
-  const dispatch = useDispatch()
+  console.log('Render AppWithRedux')
 
+
+  const dispatch = useDispatch()
   const todolists = useSelector<AppRootState>(state => state.todolists)
   const tasks = useSelector<AppRootState, TasksObjectType>(state => state.tasks)
 
-  const addNewTodoList = (title: string) => {
-    const action = addTodolistAC(title)
-    dispatch(action)
-  }
   const changeTodolistTitle = (title: string, todolistId: string) => {
     const action = changeTodolistTitleAC(todolistId, title)
     dispatch(action)
   }
-  const changeTaskStatus = (taskId: string, isDone: boolean, todolistId: string) => {
-    const action = changeTaskStatusActionCreator(todolistId, isDone, taskId)
+  const addNewTodoList = useCallback( (title: string) => {
+    const action = addTodolistAC(title)
     dispatch(action)
-  }
-  const changeTaskTitle = (id: string, todolistId: string, newTitle: string) => {
-    const action = changeTaskTitleActionCreator(todolistId, id, newTitle)
-    dispatch(action)
-  }
-  const removeTask = (id, tasksId) => {
-    dispatch( deleteTaskActionCreator(id, tasksId) )
-  }
+  } , []);
 
   return (
     <div className="app">
+
+
       <AppBar position={'static'} style={{marginBottom: "20px"}}>
         <Container maxWidth="lg">
           <Toolbar>
@@ -73,6 +62,7 @@ function AppWithRedux() {
         <Grid container>
           <AddItemForm addItem={addNewTodoList}/>
         </Grid>
+
         <Grid container spacing={3}>
 
           {

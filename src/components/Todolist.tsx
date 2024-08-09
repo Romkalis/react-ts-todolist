@@ -37,6 +37,9 @@ export function Todolist({
                            changeTodolistTitle
                          }: TodolistProps) {
 
+
+  console.log('render Todolist')
+
   const dispatch = useDispatch()
 
   const statusHandler = (evt) => {

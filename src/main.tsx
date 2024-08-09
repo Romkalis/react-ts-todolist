@@ -12,9 +12,9 @@ const root = document.getElementById('root')
 
 
 createRoot(root!).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={store}>
       <AppWithRedux />
     </Provider>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

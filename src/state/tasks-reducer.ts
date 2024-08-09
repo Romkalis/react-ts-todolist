@@ -43,15 +43,6 @@ export const todolistId2 = v1()
 const initalState = {
   [todolistId1]: [
     {id: v1(), title: "Css", isDone: true},
-    {id: v1(), title: "JS", isDone: true},
-    {id: v1(), title: "React", isDone: false,},
-    {id: v1(), title: "REST Api", isDone: false,},
-    {id: v1(), title: "GraphQL", isDone: false,},
-    {id: v1(), title: "Zustand", isDone: false,},
-  ],
-  [todolistId2]: [
-    {id: v1(), title: "Bread", isDone: true},
-    {id: v1(), title: "Hammer", isDone: false,},
   ],
 }
 
