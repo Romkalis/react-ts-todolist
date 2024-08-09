@@ -8,7 +8,6 @@ type AddItemFormProps = {
 export const AddItemForm: React.FC<AddItemFormProps> = React.memo (({addItem}) => {
 
 
-  console.log('Render AddItemForm')
 
   const [taskText, setTaskText] = useState('')
   const [error, setError] = useState<string | null>(null)

@@ -4,12 +4,11 @@ import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography}
 import {Menu} from "@mui/icons-material";
 import {
   addTodolistAC,
-  changeTodolistTitleAC,
 } from "./state/todolist-reducer.ts";
 
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootState} from "./state/store.ts";
-import React, {useCallback} from "react";
+import React from "react";
 
 export type FilterValueType = 'all' | 'active' | 'completed';
 export type TodolistsType = {
@@ -21,8 +20,6 @@ export type TasksObjectType = {
   [key: string]: Array<TaskType>
 }
 
-
-
 function AppWithRedux() {
 
   console.log('Render AppWithRedux')
@@ -31,15 +28,11 @@ function AppWithRedux() {
   const dispatch = useDispatch()
   const todolists = useSelector<AppRootState>(state => state.todolists)
   const tasks = useSelector<AppRootState, TasksObjectType>(state => state.tasks)
-
-  const changeTodolistTitle = (title: string, todolistId: string) => {
-    const action = changeTodolistTitleAC(todolistId, title)
-    dispatch(action)
-  }
-  const addNewTodoList = useCallback( (title: string) => {
+  const addNewTodoList = (title: string) => {
     const action = addTodolistAC(title)
     dispatch(action)
-  } , []);
+  }
+
 
   return (
     <div className="app">
@@ -67,14 +60,14 @@ function AppWithRedux() {
 
           {
             todolists.map(todolist => {
-              let tasksToTodolist = tasks[todolist.id];
-
-              if (todolist.filter === 'active') {
-                tasksToTodolist = tasksToTodolist.filter(task => !task.isDone)
-              }
-              if (todolist.filter === 'completed') {
-                tasksToTodolist = tasksToTodolist.filter(task => task.isDone)
-              }
+              // let tasksToTodolist = tasks[todolist.id];
+              //
+              // if (todolist.filter === 'active') {
+              //   tasksToTodolist = tasksToTodolist.filter(task => !task.isDone)
+              // }
+              // if (todolist.filter === 'completed') {
+              //   tasksToTodolist = tasksToTodolist.filter(task => task.isDone)
+              // }
 
               return (
                 <Grid item key={todolist.id}>
@@ -83,9 +76,8 @@ function AppWithRedux() {
                       key={todolist.id}
                       todolistId={todolist.id}
                       title={todolist.title}
-                      tasks={tasksToTodolist}
+                      tasks={tasks[todolist.id]}
                       filter={todolist.filter}
-                      changeTodolistTitle={changeTodolistTitle}
                     />
                   </Paper>
                 </Grid>

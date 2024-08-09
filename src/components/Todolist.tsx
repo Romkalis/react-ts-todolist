@@ -5,7 +5,7 @@ import {EditableSpan} from "./EditableSpan.tsx";
 import {Button, ButtonGroup, IconButton, Checkbox} from "@mui/material";
 import {Delete} from "@mui/icons-material";
 import {useDispatch, useSelector} from "react-redux";
-import {changeTodolistFilterAC, removeTodolistAC} from "../state/todolist-reducer.ts";
+import {changeTodolistFilterAC, changeTodolistTitleAC, removeTodolistAC} from "../state/todolist-reducer.ts";
 import {
   addNewTaskActionCreator,
   changeTaskStatusActionCreator, changeTaskTitleActionCreator,
@@ -29,17 +29,8 @@ export type TodolistProps = {
   changeTodolistTitle: (title: string, todolistId: string) => void
 }
 
-export function Todolist({
-                           todolistId,
-                           title,
-                           tasks,
-                           filter,
-                           changeTodolistTitle
-                         }: TodolistProps) {
-
-
-  console.log('render Todolist')
-
+export const Todolist = React.memo(({todolistId, title, tasks, filter}: TodolistProps) => {
+  console.log(`render ${title} Todolist`)
   const dispatch = useDispatch()
 
   const statusHandler = (evt) => {
@@ -53,10 +44,17 @@ export function Todolist({
   const addTask = (title: string) => {
     dispatch(addNewTaskActionCreator(todolistId, title))
   }
-
-  const tasks1 = useSelector <Array<TaskType>>( state => state.tasks[todolistId])
-  // console.log('TASKS IS: ', tasks1)
-
+  const changeTodolistTitle = (title: string, todolistId: string) => {
+    const action = changeTodolistTitleAC(todolistId, title)
+    dispatch(action)
+  }
+  let tasksToTodolist = tasks;
+  if (filter === 'active') {
+    tasksToTodolist = tasks.filter(task => !task.isDone)
+  }
+  if (filter === 'completed') {
+    tasksToTodolist = tasks.filter(task => task.isDone)
+  }
 
   return (
     <div>
@@ -69,7 +67,10 @@ export function Todolist({
       <AddItemForm addItem={addTask}/>
       <ul>
         {
-          tasks?.map(task => {
+
+          tasksToTodolist?.map(task => {
+
+
             const onRemoveHandler = () => dispatch(deleteTaskActionCreator(todolistId, task.id))
             const onChangeTaskStatus = (evt: ChangeEvent<HTMLInputElement>) => dispatch(changeTaskStatusActionCreator(todolistId, evt.target.checked, task.id))
             const onChangeTaskTitle = (title) =>  dispatch(changeTaskTitleActionCreator(todolistId, task.id, title))
@@ -106,6 +107,4 @@ export function Todolist({
       </div>
     </div>
   )
-}
-
-
+} )
