@@ -6,9 +6,11 @@ export type EditableSpanPropsType = {
   onChange: (newValue: string) => void;
 }
 
-export const EditableSpan: React.FC<EditableSpanPropsType> = ({title, onChange}) => {
+export const EditableSpan: React.FC<EditableSpanPropsType> = React.memo(({title, onChange}) => {
 
-  const [isEditable, setIsEditable] = useState <boolean> (false)
+  console.log(`EditableSpan for ${title}`)
+
+  const [isEditable, setIsEditable] = useState<boolean>(false)
   const [inputTitle, setInputTitle] = useState('')
 
   const onEditableActive = () => {
@@ -20,11 +22,11 @@ export const EditableSpan: React.FC<EditableSpanPropsType> = ({title, onChange})
     onChange(inputTitle)
     setInputTitle('')
   }
-  const onInputHandler = (evt: ChangeEvent<HTMLInputElement>)  => {
+  const onInputHandler = (evt: ChangeEvent<HTMLInputElement>) => {
     setInputTitle(evt.target.value)
   }
   const onEnter = (evt) => {
-    if(evt.key === 'Enter') {
+    if (evt.key === 'Enter') {
       onEditableDeactivated()
     }
   }
@@ -43,5 +45,5 @@ export const EditableSpan: React.FC<EditableSpanPropsType> = ({title, onChange})
       onChange={onInputHandler}
       autoFocus/>
 
-    : <span onDoubleClick={onEditableActive} >{title}</span>
-}
+    : <span onDoubleClick={onEditableActive}>{title}</span>
+})

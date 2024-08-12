@@ -1,16 +1,13 @@
 import {FilterValueType} from "../App.tsx";
-import React, {ChangeEvent} from "react";
+import React, {useCallback} from "react";
 import {AddItemForm} from "./AddItemForm.tsx";
 import {EditableSpan} from "./EditableSpan.tsx";
-import {Button, ButtonGroup, IconButton, Checkbox} from "@mui/material";
+import {Button, ButtonGroup, IconButton} from "@mui/material";
 import {Delete} from "@mui/icons-material";
 import {useDispatch} from "react-redux";
 import {changeTodolistFilterAC, changeTodolistTitleAC, removeTodolistAC} from "../state/todolist-reducer.ts";
-import {
-  addNewTaskActionCreator,
-  changeTaskStatusActionCreator, changeTaskTitleActionCreator,
-  deleteTaskActionCreator
-} from "../state/tasks-reducer.ts";
+import {addNewTaskActionCreator} from "../state/tasks-reducer.ts";
+import {Task} from "./Task.tsx";
 
 export interface TaskType {
   id: string;
@@ -40,13 +37,14 @@ export const Todolist = React.memo(({todolistId, title, tasks, filter}: Todolist
   const onTodolistRemove = () => {
     dispatch(removeTodolistAC(todolistId))
   }
-  const addTask = (title: string) => {
+  const addTask = useCallback((title: string) => {
     dispatch(addNewTaskActionCreator(todolistId, title))
-  }
-  const changeTodolistTitle = (title: string, todolistId: string) => {
+  }, [dispatch, todolistId])
+
+  const changeTodolistTitle = useCallback((title: string) => {
     const action = changeTodolistTitleAC(todolistId, title)
     dispatch(action)
-  }
+  }, [dispatch, todolistId])
 
   let tasksToTodolist = tasks;
 
@@ -60,35 +58,15 @@ export const Todolist = React.memo(({todolistId, title, tasks, filter}: Todolist
   return (
     <div>
       <h3>
-        <EditableSpan title={title} onChange={(value) => changeTodolistTitle(value, todolistId)}/>
-        <IconButton onClick={onTodolistRemove} size={'small'} >
-          <Delete />
+        <EditableSpan title={title} onChange={changeTodolistTitle}/>
+        <IconButton onClick={onTodolistRemove} size={'small'}>
+          <Delete/>
         </IconButton>
       </h3>
       <AddItemForm addItem={addTask}/>
       <ul>
         {
-
-          tasksToTodolist?.map(task => {
-
-
-            const onRemoveHandler = () => dispatch(deleteTaskActionCreator(todolistId, task.id))
-            const onChangeTaskStatus = (evt: ChangeEvent<HTMLInputElement>) =>
-              dispatch(changeTaskStatusActionCreator(todolistId, evt.target.checked, task.id))
-            const onChangeTaskTitle = (title) =>  dispatch(changeTaskTitleActionCreator(todolistId, task.id, title))
-
-            return (
-              <li className={task.isDone ? 'is-done' : ''} key={task.id}>
-                <Checkbox onChange={onChangeTaskStatus}
-                          checked={task.isDone}
-                          color={'success'}/>
-
-                <EditableSpan title={task.title} onChange={onChangeTaskTitle}/>
-                <IconButton onClick={onRemoveHandler} size={'small'} >
-                  <Delete />
-                </IconButton>
-              </li>)
-          })
+          tasksToTodolist?.map(task => <Task key={task.id} task={task} todolistId={todolistId}/>)
         }
       </ul>
       <div>
@@ -109,4 +87,5 @@ export const Todolist = React.memo(({todolistId, title, tasks, filter}: Todolist
       </div>
     </div>
   )
-} )
+})
+
