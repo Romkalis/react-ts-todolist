@@ -35,7 +35,6 @@ export const Todolist = React.memo(({todolistId, title, tasks, filter}: Todolist
 
   const statusHandler = (evt) => {
     const text = (evt.target.textContent).toLowerCase()
-    // changeFilter(text, todolistId)
     dispatch(changeTodolistFilterAC(text, todolistId))
   }
   const onTodolistRemove = () => {
@@ -48,7 +47,9 @@ export const Todolist = React.memo(({todolistId, title, tasks, filter}: Todolist
     const action = changeTodolistTitleAC(todolistId, title)
     dispatch(action)
   }
+
   let tasksToTodolist = tasks;
+
   if (filter === 'active') {
     tasksToTodolist = tasks.filter(task => !task.isDone)
   }
@@ -72,7 +73,8 @@ export const Todolist = React.memo(({todolistId, title, tasks, filter}: Todolist
 
 
             const onRemoveHandler = () => dispatch(deleteTaskActionCreator(todolistId, task.id))
-            const onChangeTaskStatus = (evt: ChangeEvent<HTMLInputElement>) => dispatch(changeTaskStatusActionCreator(todolistId, evt.target.checked, task.id))
+            const onChangeTaskStatus = (evt: ChangeEvent<HTMLInputElement>) =>
+              dispatch(changeTaskStatusActionCreator(todolistId, evt.target.checked, task.id))
             const onChangeTaskTitle = (title) =>  dispatch(changeTaskTitleActionCreator(todolistId, task.id, title))
 
             return (

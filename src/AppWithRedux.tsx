@@ -9,6 +9,7 @@ import {
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootState} from "./state/store.ts";
 import React from "react";
+import {HeaderAppBar} from "./components/AppBar.tsx";
 
 export type FilterValueType = 'all' | 'active' | 'completed';
 export type TodolistsType = {
@@ -37,20 +38,8 @@ function AppWithRedux() {
   return (
     <div className="app">
 
+      <HeaderAppBar />
 
-      <AppBar position={'static'} style={{marginBottom: "20px"}}>
-        <Container maxWidth="lg">
-          <Toolbar>
-            <IconButton edge={'start'} color={'inherit'} aria-label={'menu'}>
-              <Menu/>
-            </IconButton>
-            <Typography variant={'h6'}>
-              News
-            </Typography>
-            <Button color={'inherit'}>Login</Button>
-          </Toolbar>
-        </Container>
-      </AppBar>
       <Container maxWidth="md">
         <Grid container>
           <AddItemForm addItem={addNewTodoList}/>
@@ -60,15 +49,6 @@ function AppWithRedux() {
 
           {
             todolists.map(todolist => {
-              // let tasksToTodolist = tasks[todolist.id];
-              //
-              // if (todolist.filter === 'active') {
-              //   tasksToTodolist = tasksToTodolist.filter(task => !task.isDone)
-              // }
-              // if (todolist.filter === 'completed') {
-              //   tasksToTodolist = tasksToTodolist.filter(task => task.isDone)
-              // }
-
               return (
                 <Grid item key={todolist.id}>
                   <Paper elevation={3} style={{padding: '15px'}}>

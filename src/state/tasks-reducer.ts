@@ -61,7 +61,6 @@ export const tasksReducer = (state: TasksObjectType = initalState, action: Actio
       // const changeTaskStatus = (id: string, isDone: boolean, tasksId: string)
       const todolist = state[action.id]
       const updatedTodolist = todolist.map(task => task.id === action.taskId ? {...task, isDone: action.isDone} : task)
-
       return {...state, [action.id]: updatedTodolist}
     }
     case 'DELETE-TASK': {
@@ -73,7 +72,6 @@ export const tasksReducer = (state: TasksObjectType = initalState, action: Actio
       break
     }
     case 'CHANGE-TASK-TITLE': {
-
       const todolist = state[action.id]
       if (todolist) {
         const updatedTodolist = todolist.map(task => (
