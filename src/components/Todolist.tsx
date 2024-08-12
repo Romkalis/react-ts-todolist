@@ -4,7 +4,7 @@ import {AddItemForm} from "./AddItemForm.tsx";
 import {EditableSpan} from "./EditableSpan.tsx";
 import {Button, ButtonGroup, IconButton, Checkbox} from "@mui/material";
 import {Delete} from "@mui/icons-material";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {changeTodolistFilterAC, changeTodolistTitleAC, removeTodolistAC} from "../state/todolist-reducer.ts";
 import {
   addNewTaskActionCreator,
@@ -22,11 +22,11 @@ export type TodolistProps = {
   todolistId: string;
   title: string;
   tasks: TaskType[];
-  changeFilter: (value: string, todolistId: string) => void;
-  addItem: (str: string, todolistId: string) => void;
+  // changeFilter: (value: string, todolistId: string) => void;
+  // addItem: (str: string, todolistId: string) => void;
   filter: FilterValueType;
-  removeTodolist: (taskId: string) => void;
-  changeTodolistTitle: (title: string, todolistId: string) => void
+  // removeTodolist: (taskId: string) => void;
+  // changeTodolistTitle: (title: string, todolistId: string) => void
 }
 
 export const Todolist = React.memo(({todolistId, title, tasks, filter}: TodolistProps) => {
