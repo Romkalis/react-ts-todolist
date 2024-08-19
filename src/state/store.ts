@@ -13,8 +13,5 @@ export type AppRootState = ReturnType< typeof rootReducer >
 export const store: AppRootState = createStore(rootReducer)
 
 
-// @ts-ignore
-window.store = store;
-
 
 

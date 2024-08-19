@@ -16,3 +16,6 @@ const callback = action('OnChange was called')
 export const EditableSpanBaseExpample = () => {
   return <EditableSpan title={"Заголовок"} onChange={callback} />
 }
+export const EditableSpanBaseExpample2 = () => {
+  return <EditableSpan title={"ClickMe"} onChange={callback} />
+}

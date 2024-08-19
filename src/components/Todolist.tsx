@@ -19,19 +19,15 @@ export type TodolistProps = {
   todolistId: string;
   title: string;
   tasks: TaskType[];
-  // changeFilter: (value: string, todolistId: string) => void;
-  // addItem: (str: string, todolistId: string) => void;
   filter: FilterValueType;
-  // removeTodolist: (taskId: string) => void;
-  // changeTodolistTitle: (title: string, todolistId: string) => void
 }
 
 export const Todolist = React.memo(({todolistId, title, tasks, filter}: TodolistProps) => {
   console.log(`render ${title} Todolist`)
   const dispatch = useDispatch()
 
-  const statusHandler = (evt) => {
-    const text = (evt.target.textContent).toLowerCase()
+  const statusHandler = (evt: React.MouseEvent<HTMLElement>) => {
+    const text = (evt.target.textContent || '').toLowerCase()
     dispatch(changeTodolistFilterAC(text, todolistId))
   }
   const onTodolistRemove = () => {

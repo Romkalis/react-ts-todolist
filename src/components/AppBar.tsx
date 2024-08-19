@@ -1,6 +1,5 @@
 import {AppBar, Button, Container, IconButton, Toolbar, Typography} from "@mui/material";
 import {Menu} from "@mui/icons-material";
-import React from "react";
 
 export const HeaderAppBar = () => {
   return (
