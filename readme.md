@@ -4,9 +4,9 @@ useReducer принимает как и useState 2 агрумента - перв
 
 
 ```mermaid
- A[заголовок] --> B {Ромб}
- B --YES--> C{еще ромб}
- B --NO--> D[Не Ромб]
- C --> E[The end]
- D --> E[The end]
+ A[заголовок]-->B{Ромб}
+ B--YES-->C{еще ромб}
+ B--NO-->D[Не Ромб]
+ C-->E[The end]
+ D-->E[The end]
 ```
