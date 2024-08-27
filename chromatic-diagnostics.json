@@ -1,0 +1,909 @@
+{
+  "activity": {},
+  "announcedBuild": {
+    "id": "66cdbe96862906312fc9a900",
+    "number": 4,
+    "status": "PUBLISHED",
+    "autoAcceptChanges": false,
+    "app": {
+      "id": "66cdbb7735e7c2f702960585",
+      "turboSnapAvailability": "UNAVAILABLE"
+    },
+    "storybookUrl": "https://66cdbb7735e7c2f702960585-hnjeiibojd.chromatic.com/"
+  },
+  "build": {
+    "id": "66cdbe96862906312fc9a900",
+    "number": 4,
+    "status": "PENDING",
+    "autoAcceptChanges": false,
+    "app": {
+      "manageUrl": "https://www.chromatic.com/manage?appId=66cdbb7735e7c2f702960585",
+      "setupUrl": "https://www.chromatic.com/setup?appId=66cdbb7735e7c2f702960585",
+      "account": {
+        "exceededThreshold": false,
+        "paymentRequired": false,
+        "billingUrl": "https://www.chromatic.com/billing?accountId=66cdbab2134fea98eda6fab4"
+      },
+      "repository": {
+        "provider": "github"
+      }
+    },
+    "storybookUrl": "https://66cdbb7735e7c2f702960585-hnjeiibojd.chromatic.com/",
+    "commit": "2b53c11b4ffeffd5a17c88f0f85d7393ca88c2e6",
+    "committedAt": 1724403985000,
+    "uncommittedHash": "fc8683fd204e942ddaf0d976c790fd8994926e44",
+    "isLocalBuild": true,
+    "changeCount": 1,
+    "specCount": 9,
+    "componentCount": 5,
+    "testCount": 9,
+    "errorCount": 0,
+    "actualTestCount": 9,
+    "actualCaptureCount": 9,
+    "inheritedCaptureCount": 0,
+    "interactionTestFailuresCount": 0,
+    "webUrl": "https://www.chromatic.com/build?appId=66cdbb7735e7c2f702960585&number=4",
+    "browsers": [
+      {
+        "browser": "chrome"
+      }
+    ],
+    "features": {
+      "uiTests": true,
+      "uiReview": true
+    },
+    "turboSnapEnabled": false,
+    "wasLimited": false,
+    "tests": [
+      {
+        "spec": {
+          "name": "App With Redux Base Example",
+          "component": {
+            "name": "AppWithReduxComponent",
+            "displayName": "AppWithReduxComponent"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      },
+      {
+        "spec": {
+          "name": "Add Item Form Base Example",
+          "component": {
+            "name": "AddItemFormComponent",
+            "displayName": "AddItemFormComponent"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      },
+      {
+        "spec": {
+          "name": "Editable Span Base Expample",
+          "component": {
+            "name": "Editable Span Component",
+            "displayName": "Editable Span Component"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      },
+      {
+        "spec": {
+          "name": "Editable Span Base Expample 2",
+          "component": {
+            "name": "Editable Span Component",
+            "displayName": "Editable Span Component"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      },
+      {
+        "spec": {
+          "name": "Task Example",
+          "component": {
+            "name": "Task Component",
+            "displayName": "Task Component"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      },
+      {
+        "spec": {
+          "name": "Primary",
+          "component": {
+            "name": "Example/Button",
+            "displayName": "Button"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      },
+      {
+        "spec": {
+          "name": "Secondary",
+          "component": {
+            "name": "Example/Button",
+            "displayName": "Button"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      },
+      {
+        "spec": {
+          "name": "Large",
+          "component": {
+            "name": "Example/Button",
+            "displayName": "Button"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      },
+      {
+        "spec": {
+          "name": "Small",
+          "component": {
+            "name": "Example/Button",
+            "displayName": "Button"
+          }
+        },
+        "parameters": {
+          "viewport": 1200,
+          "viewportIsDefault": true
+        },
+        "mode": {
+          "name": "1200px"
+        }
+      }
+    ],
+    "inProgressCount": 0,
+    "completedAt": 1724759744226
+  },
+  "buildCommand": "npm run build-storybook -- --output-dir /var/folders/2v/wn39lc4s0rz04h23m949ksrm0000gn/T/chromatic--53011-HHpBq2z83Mwu",
+  "buildLogFile": "/Users/lis/Sites/todoList/build-storybook.log",
+  "configuration": {
+    "configFile": "chromatic.config.json",
+    "projectId": "Project:66cdbb7735e7c2f702960585",
+    "onlyChanged": true,
+    "debug": true,
+    "zip": true
+  },
+  "environment": {},
+  "exitCode": 0,
+  "exitCodeKey": "OK",
+  "extraOptions": {
+    "projectId": "Project:66cdbb7735e7c2f702960585",
+    "autoAcceptChanges": false,
+    "exitOnceUploaded": false,
+    "exitZeroOnChanges": true,
+    "forceRebuild": true,
+    "fromCI": false,
+    "interactive": false,
+    "isLocalBuild": true,
+    "skip": false,
+    "skipUpdateCheck": true,
+    "experimental_abortSignal": {}
+  },
+  "fileInfo": {
+    "lengths": [
+      {
+        "pathname": "assets/AddItemForm-D9C0Sqol.js",
+        "contentLength": 978,
+        "knownAs": "assets/AddItemForm-D9C0Sqol.js"
+      },
+      {
+        "pathname": "assets/AddItemForm.stories-BULDPpJc.js",
+        "contentLength": 682,
+        "knownAs": "assets/AddItemForm.stories-BULDPpJc.js"
+      },
+      {
+        "pathname": "assets/AppWithRedux.stories-CK9Baa_Q.js",
+        "contentLength": 30929,
+        "knownAs": "assets/AppWithRedux.stories-CK9Baa_Q.js"
+      },
+      {
+        "pathname": "assets/Button-BfyGbg8N.css",
+        "contentLength": 522,
+        "knownAs": "assets/Button-BfyGbg8N.css"
+      },
+      {
+        "pathname": "assets/Button.stories-DnTDc7MN.js",
+        "contentLength": 641698,
+        "knownAs": "assets/Button.stories-DnTDc7MN.js"
+      },
+      {
+        "pathname": "assets/EditableSpan-yCIJF7Gl.js",
+        "contentLength": 526,
+        "knownAs": "assets/EditableSpan-yCIJF7Gl.js"
+      },
+      {
+        "pathname": "assets/EditableSpan.stories-DgqXvxqy.js",
+        "contentLength": 1001,
+        "knownAs": "assets/EditableSpan.stories-DgqXvxqy.js"
+      },
+      {
+        "pathname": "assets/IconButton-hc7kRzUM.js",
+        "contentLength": 14411,
+        "knownAs": "assets/IconButton-hc7kRzUM.js"
+      },
+      {
+        "pathname": "assets/ReduxStoreProviderDecorator-CXVFck0C.js",
+        "contentLength": 14912,
+        "knownAs": "assets/ReduxStoreProviderDecorator-CXVFck0C.js"
+      },
+      {
+        "pathname": "assets/Task.stories-BGKacWeg.js",
+        "contentLength": 979,
+        "knownAs": "assets/Task.stories-BGKacWeg.js"
+      },
+      {
+        "pathname": "assets/TextField-CPyPA4-q.js",
+        "contentLength": 140057,
+        "knownAs": "assets/TextField-CPyPA4-q.js"
+      },
+      {
+        "pathname": "assets/chunk-454WOBUV-BwFxOWLX.js",
+        "contentLength": 1546,
+        "knownAs": "assets/chunk-454WOBUV-BwFxOWLX.js"
+      },
+      {
+        "pathname": "assets/entry-preview-Dv4Y6EUt.js",
+        "contentLength": 1803,
+        "knownAs": "assets/entry-preview-Dv4Y6EUt.js"
+      },
+      {
+        "pathname": "assets/iframe-BOfhuGfH.js",
+        "contentLength": 4614,
+        "knownAs": "assets/iframe-BOfhuGfH.js"
+      },
+      {
+        "pathname": "assets/index-BfMN1fBl.js",
+        "contentLength": 7686,
+        "knownAs": "assets/index-BfMN1fBl.js"
+      },
+      {
+        "pathname": "assets/index-C8k3Z-3Y.js",
+        "contentLength": 60444,
+        "knownAs": "assets/index-C8k3Z-3Y.js"
+      },
+      {
+        "pathname": "assets/index-DrFu-skq.js",
+        "contentLength": 767,
+        "knownAs": "assets/index-DrFu-skq.js"
+      },
+      {
+        "pathname": "assets/index-YzSdZDAm.js",
+        "contentLength": 133946,
+        "knownAs": "assets/index-YzSdZDAm.js"
+      },
+      {
+        "pathname": "assets/jsx-runtime-gii4gJOS.js",
+        "contentLength": 918,
+        "knownAs": "assets/jsx-runtime-gii4gJOS.js"
+      },
+      {
+        "pathname": "assets/preview-0Jj89qip.js",
+        "contentLength": 164,
+        "knownAs": "assets/preview-0Jj89qip.js"
+      },
+      {
+        "pathname": "assets/preview-4Up_z4Em.js",
+        "contentLength": 691,
+        "knownAs": "assets/preview-4Up_z4Em.js"
+      },
+      {
+        "pathname": "assets/preview-8DgTQuBf.js",
+        "contentLength": 2472,
+        "knownAs": "assets/preview-8DgTQuBf.js"
+      },
+      {
+        "pathname": "assets/preview-BnWGZYux.js",
+        "contentLength": 73,
+        "knownAs": "assets/preview-BnWGZYux.js"
+      },
+      {
+        "pathname": "assets/preview-CIRcjyVj.js",
+        "contentLength": 110,
+        "knownAs": "assets/preview-CIRcjyVj.js"
+      },
+      {
+        "pathname": "assets/preview-CkAqEtZp.js",
+        "contentLength": 2640,
+        "knownAs": "assets/preview-CkAqEtZp.js"
+      },
+      {
+        "pathname": "assets/preview-DB9FwMii.js",
+        "contentLength": 7623,
+        "knownAs": "assets/preview-DB9FwMii.js"
+      },
+      {
+        "pathname": "assets/preview-DaXeQf6O.js",
+        "contentLength": 8074,
+        "knownAs": "assets/preview-DaXeQf6O.js"
+      },
+      {
+        "pathname": "assets/preview-Djh1_Tal.js",
+        "contentLength": 3109,
+        "knownAs": "assets/preview-Djh1_Tal.js"
+      },
+      {
+        "pathname": "assets/v4-CQkTLCs1.js",
+        "contentLength": 811,
+        "knownAs": "assets/v4-CQkTLCs1.js"
+      },
+      {
+        "pathname": "favicon.svg",
+        "contentLength": 1251,
+        "knownAs": "favicon.svg"
+      },
+      {
+        "pathname": "iframe.html",
+        "contentLength": 16159,
+        "knownAs": "iframe.html"
+      },
+      {
+        "pathname": "index.html",
+        "contentLength": 4963,
+        "knownAs": "index.html"
+      },
+      {
+        "pathname": "index.json",
+        "contentLength": 2516,
+        "knownAs": "index.json"
+      },
+      {
+        "pathname": "nunito-sans-bold-italic.woff2",
+        "contentLength": 49460,
+        "knownAs": "nunito-sans-bold-italic.woff2"
+      },
+      {
+        "pathname": "nunito-sans-bold.woff2",
+        "contentLength": 47144,
+        "knownAs": "nunito-sans-bold.woff2"
+      },
+      {
+        "pathname": "nunito-sans-italic.woff2",
+        "contentLength": 49620,
+        "knownAs": "nunito-sans-italic.woff2"
+      },
+      {
+        "pathname": "nunito-sans-regular.woff2",
+        "contentLength": 47072,
+        "knownAs": "nunito-sans-regular.woff2"
+      },
+      {
+        "pathname": "project.json",
+        "contentLength": 1129,
+        "knownAs": "project.json"
+      },
+      {
+        "pathname": "sb-addons/chromatic-com-storybook-10/manager-bundle.js",
+        "contentLength": 571158,
+        "knownAs": "sb-addons/chromatic-com-storybook-10/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/chromatic-com-storybook-10/manager-bundle.js.LEGAL.txt",
+        "contentLength": 1684,
+        "knownAs": "sb-addons/chromatic-com-storybook-10/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/essentials-actions-4/manager-bundle.js",
+        "contentLength": 41051,
+        "knownAs": "sb-addons/essentials-actions-4/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/essentials-actions-4/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/essentials-actions-4/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/essentials-backgrounds-5/manager-bundle.js",
+        "contentLength": 13471,
+        "knownAs": "sb-addons/essentials-backgrounds-5/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/essentials-backgrounds-5/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/essentials-backgrounds-5/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/essentials-controls-3/manager-bundle.js",
+        "contentLength": 508703,
+        "knownAs": "sb-addons/essentials-controls-3/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/essentials-controls-3/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/essentials-controls-3/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/essentials-measure-8/manager-bundle.js",
+        "contentLength": 6203,
+        "knownAs": "sb-addons/essentials-measure-8/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/essentials-measure-8/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/essentials-measure-8/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/essentials-outline-9/manager-bundle.js",
+        "contentLength": 6245,
+        "knownAs": "sb-addons/essentials-outline-9/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/essentials-outline-9/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/essentials-outline-9/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/essentials-toolbars-7/manager-bundle.js",
+        "contentLength": 5157,
+        "knownAs": "sb-addons/essentials-toolbars-7/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/essentials-toolbars-7/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/essentials-toolbars-7/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/essentials-viewport-6/manager-bundle.js",
+        "contentLength": 13747,
+        "knownAs": "sb-addons/essentials-viewport-6/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/essentials-viewport-6/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/essentials-viewport-6/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/interactions-11/manager-bundle.js",
+        "contentLength": 301409,
+        "knownAs": "sb-addons/interactions-11/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/interactions-11/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/interactions-11/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/links-2/manager-bundle.js",
+        "contentLength": 891,
+        "knownAs": "sb-addons/links-2/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/links-2/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/links-2/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/onboarding-1/manager-bundle.js",
+        "contentLength": 155819,
+        "knownAs": "sb-addons/onboarding-1/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/onboarding-1/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/onboarding-1/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js",
+        "contentLength": 1116,
+        "knownAs": "sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-addons/storysource-12/manager-bundle.js",
+        "contentLength": 11946,
+        "knownAs": "sb-addons/storysource-12/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons/storysource-12/manager-bundle.js.LEGAL.txt",
+        "contentLength": 0,
+        "knownAs": "sb-addons/storysource-12/manager-bundle.js.LEGAL.txt"
+      },
+      {
+        "pathname": "sb-common-assets/favicon.svg",
+        "contentLength": 1251,
+        "knownAs": "sb-common-assets/favicon.svg"
+      },
+      {
+        "pathname": "sb-common-assets/nunito-sans-bold-italic.woff2",
+        "contentLength": 49460,
+        "knownAs": "sb-common-assets/nunito-sans-bold-italic.woff2"
+      },
+      {
+        "pathname": "sb-common-assets/nunito-sans-bold.woff2",
+        "contentLength": 47144,
+        "knownAs": "sb-common-assets/nunito-sans-bold.woff2"
+      },
+      {
+        "pathname": "sb-common-assets/nunito-sans-italic.woff2",
+        "contentLength": 49620,
+        "knownAs": "sb-common-assets/nunito-sans-italic.woff2"
+      },
+      {
+        "pathname": "sb-common-assets/nunito-sans-regular.woff2",
+        "contentLength": 47072,
+        "knownAs": "sb-common-assets/nunito-sans-regular.woff2"
+      },
+      {
+        "pathname": "sb-manager/globals-module-info.js",
+        "contentLength": 21695,
+        "knownAs": "sb-manager/globals-module-info.js"
+      },
+      {
+        "pathname": "sb-manager/globals-runtime.js",
+        "contentLength": 1853852,
+        "knownAs": "sb-manager/globals-runtime.js"
+      },
+      {
+        "pathname": "sb-manager/globals.js",
+        "contentLength": 2428,
+        "knownAs": "sb-manager/globals.js"
+      },
+      {
+        "pathname": "sb-manager/runtime.js",
+        "contentLength": 421260,
+        "knownAs": "sb-manager/runtime.js"
+      },
+      {
+        "pathname": "sb-preview/globals.js",
+        "contentLength": 1793,
+        "knownAs": "sb-preview/globals.js"
+      },
+      {
+        "pathname": "sb-preview/runtime.js",
+        "contentLength": 348979,
+        "knownAs": "sb-preview/runtime.js"
+      }
+    ],
+    "paths": [
+      "assets/AddItemForm-D9C0Sqol.js",
+      "assets/AddItemForm.stories-BULDPpJc.js",
+      "assets/AppWithRedux.stories-CK9Baa_Q.js",
+      "assets/Button-BfyGbg8N.css",
+      "assets/Button.stories-DnTDc7MN.js",
+      "assets/EditableSpan-yCIJF7Gl.js",
+      "assets/EditableSpan.stories-DgqXvxqy.js",
+      "assets/IconButton-hc7kRzUM.js",
+      "assets/ReduxStoreProviderDecorator-CXVFck0C.js",
+      "assets/Task.stories-BGKacWeg.js",
+      "assets/TextField-CPyPA4-q.js",
+      "assets/chunk-454WOBUV-BwFxOWLX.js",
+      "assets/entry-preview-Dv4Y6EUt.js",
+      "assets/iframe-BOfhuGfH.js",
+      "assets/index-BfMN1fBl.js",
+      "assets/index-C8k3Z-3Y.js",
+      "assets/index-DrFu-skq.js",
+      "assets/index-YzSdZDAm.js",
+      "assets/jsx-runtime-gii4gJOS.js",
+      "assets/preview-0Jj89qip.js",
+      "assets/preview-4Up_z4Em.js",
+      "assets/preview-8DgTQuBf.js",
+      "assets/preview-BnWGZYux.js",
+      "assets/preview-CIRcjyVj.js",
+      "assets/preview-CkAqEtZp.js",
+      "assets/preview-DB9FwMii.js",
+      "assets/preview-DaXeQf6O.js",
+      "assets/preview-Djh1_Tal.js",
+      "assets/v4-CQkTLCs1.js",
+      "favicon.svg",
+      "iframe.html",
+      "index.html",
+      "index.json",
+      "nunito-sans-bold-italic.woff2",
+      "nunito-sans-bold.woff2",
+      "nunito-sans-italic.woff2",
+      "nunito-sans-regular.woff2",
+      "project.json",
+      "sb-addons/chromatic-com-storybook-10/manager-bundle.js",
+      "sb-addons/chromatic-com-storybook-10/manager-bundle.js.LEGAL.txt",
+      "sb-addons/essentials-actions-4/manager-bundle.js",
+      "sb-addons/essentials-actions-4/manager-bundle.js.LEGAL.txt",
+      "sb-addons/essentials-backgrounds-5/manager-bundle.js",
+      "sb-addons/essentials-backgrounds-5/manager-bundle.js.LEGAL.txt",
+      "sb-addons/essentials-controls-3/manager-bundle.js",
+      "sb-addons/essentials-controls-3/manager-bundle.js.LEGAL.txt",
+      "sb-addons/essentials-measure-8/manager-bundle.js",
+      "sb-addons/essentials-measure-8/manager-bundle.js.LEGAL.txt",
+      "sb-addons/essentials-outline-9/manager-bundle.js",
+      "sb-addons/essentials-outline-9/manager-bundle.js.LEGAL.txt",
+      "sb-addons/essentials-toolbars-7/manager-bundle.js",
+      "sb-addons/essentials-toolbars-7/manager-bundle.js.LEGAL.txt",
+      "sb-addons/essentials-viewport-6/manager-bundle.js",
+      "sb-addons/essentials-viewport-6/manager-bundle.js.LEGAL.txt",
+      "sb-addons/interactions-11/manager-bundle.js",
+      "sb-addons/interactions-11/manager-bundle.js.LEGAL.txt",
+      "sb-addons/links-2/manager-bundle.js",
+      "sb-addons/links-2/manager-bundle.js.LEGAL.txt",
+      "sb-addons/onboarding-1/manager-bundle.js",
+      "sb-addons/onboarding-1/manager-bundle.js.LEGAL.txt",
+      "sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js",
+      "sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js.LEGAL.txt",
+      "sb-addons/storysource-12/manager-bundle.js",
+      "sb-addons/storysource-12/manager-bundle.js.LEGAL.txt",
+      "sb-common-assets/favicon.svg",
+      "sb-common-assets/nunito-sans-bold-italic.woff2",
+      "sb-common-assets/nunito-sans-bold.woff2",
+      "sb-common-assets/nunito-sans-italic.woff2",
+      "sb-common-assets/nunito-sans-regular.woff2",
+      "sb-manager/globals-module-info.js",
+      "sb-manager/globals-runtime.js",
+      "sb-manager/globals.js",
+      "sb-manager/runtime.js",
+      "sb-preview/globals.js",
+      "sb-preview/runtime.js"
+    ],
+    "total": 5786654,
+    "hashes": {
+      "assets/AddItemForm-D9C0Sqol.js": "f67e037583dbe4e7",
+      "assets/AddItemForm.stories-BULDPpJc.js": "1d6d5ab84bc20fcf",
+      "assets/AppWithRedux.stories-CK9Baa_Q.js": "2f09fcb63fd4bb3a",
+      "assets/Button-BfyGbg8N.css": "1153cf1f4b37888f",
+      "assets/Button.stories-DnTDc7MN.js": "6607bc42c9689a12",
+      "assets/EditableSpan-yCIJF7Gl.js": "8f22375803cf28ed",
+      "assets/EditableSpan.stories-DgqXvxqy.js": "8c8454386a36af49",
+      "assets/IconButton-hc7kRzUM.js": "5260a6c5e850baec",
+      "assets/ReduxStoreProviderDecorator-CXVFck0C.js": "6ddb50acc8343f08",
+      "assets/Task.stories-BGKacWeg.js": "22db1731c04bcb77",
+      "assets/TextField-CPyPA4-q.js": "366c32ce27ae5ea3",
+      "assets/chunk-454WOBUV-BwFxOWLX.js": "d9616b0370cbf05a",
+      "assets/entry-preview-Dv4Y6EUt.js": "4667e3f38032a1f0",
+      "assets/iframe-BOfhuGfH.js": "fdc3cb2e3f498922",
+      "assets/index-BfMN1fBl.js": "3f79c7893220dec4",
+      "assets/index-C8k3Z-3Y.js": "26f55a87d0df9682",
+      "assets/index-DrFu-skq.js": "894f6b01402f1ee1",
+      "assets/index-YzSdZDAm.js": "fe4a66618ddd496b",
+      "assets/jsx-runtime-gii4gJOS.js": "652bbe37fb6c626c",
+      "assets/preview-0Jj89qip.js": "66e0a72f3a98d895",
+      "assets/preview-4Up_z4Em.js": "2597d0144a221a9f",
+      "assets/preview-8DgTQuBf.js": "fdff45c8dc2fa0a3",
+      "assets/preview-BnWGZYux.js": "2577baa942f1d25d",
+      "assets/preview-CIRcjyVj.js": "3e99f06a960f2e8f",
+      "assets/preview-CkAqEtZp.js": "0e449ea7ed98bb46",
+      "assets/preview-DB9FwMii.js": "67faec3276535f9f",
+      "assets/preview-DaXeQf6O.js": "56fb3afdb323dc1f",
+      "assets/preview-Djh1_Tal.js": "5381acb6be3cb9ac",
+      "assets/v4-CQkTLCs1.js": "d2017ce84b3647cd",
+      "favicon.svg": "293aff65db45e6c4",
+      "iframe.html": "394db5029b11c6c8",
+      "index.html": "f6030df242ad5ec4",
+      "index.json": "7c366dda3d842674",
+      "nunito-sans-bold-italic.woff2": "d64464b3594b3fb9",
+      "nunito-sans-bold.woff2": "0bd5b61b7fb7f7d5",
+      "nunito-sans-italic.woff2": "b7807d9de055e9a0",
+      "nunito-sans-regular.woff2": "6687b7be04c2debe",
+      "project.json": "60f4ce94f8a20154",
+      "sb-addons/chromatic-com-storybook-10/manager-bundle.js": "0000d2b05f7cf1ba",
+      "sb-addons/chromatic-com-storybook-10/manager-bundle.js.LEGAL.txt": "1130aaff59aebfe1",
+      "sb-addons/essentials-actions-4/manager-bundle.js": "896b1132000ae7b6",
+      "sb-addons/essentials-actions-4/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/essentials-backgrounds-5/manager-bundle.js": "4050a1382869b478",
+      "sb-addons/essentials-backgrounds-5/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/essentials-controls-3/manager-bundle.js": "68ec59aae91c6045",
+      "sb-addons/essentials-controls-3/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/essentials-measure-8/manager-bundle.js": "3a5fcb106cfd62a9",
+      "sb-addons/essentials-measure-8/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/essentials-outline-9/manager-bundle.js": "98f79ecf72eb2b77",
+      "sb-addons/essentials-outline-9/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/essentials-toolbars-7/manager-bundle.js": "5d0ad3873e9b8158",
+      "sb-addons/essentials-toolbars-7/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/essentials-viewport-6/manager-bundle.js": "584a34cc05e30254",
+      "sb-addons/essentials-viewport-6/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/interactions-11/manager-bundle.js": "a593bebc0d05d1da",
+      "sb-addons/interactions-11/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/links-2/manager-bundle.js": "87e7a1082107654f",
+      "sb-addons/links-2/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/onboarding-1/manager-bundle.js": "2bac7fd0a2e96d12",
+      "sb-addons/onboarding-1/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js": "6ec3dc61df8cc600",
+      "sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-addons/storysource-12/manager-bundle.js": "70e9d2e40b7fc5c3",
+      "sb-addons/storysource-12/manager-bundle.js.LEGAL.txt": "ef46db3751d8e999",
+      "sb-common-assets/favicon.svg": "293aff65db45e6c4",
+      "sb-common-assets/nunito-sans-bold-italic.woff2": "d64464b3594b3fb9",
+      "sb-common-assets/nunito-sans-bold.woff2": "0bd5b61b7fb7f7d5",
+      "sb-common-assets/nunito-sans-italic.woff2": "b7807d9de055e9a0",
+      "sb-common-assets/nunito-sans-regular.woff2": "6687b7be04c2debe",
+      "sb-manager/globals-module-info.js": "d0e56fb62b273dbd",
+      "sb-manager/globals-runtime.js": "ae15f0f9a885ce57",
+      "sb-manager/globals.js": "dbb1adbc9aebc9d2",
+      "sb-manager/runtime.js": "a6b481983581bf56",
+      "sb-preview/globals.js": "34694a6ced7d7b19",
+      "sb-preview/runtime.js": "c184bafa65dbaeed"
+    }
+  },
+  "flags": {
+    "interactive": false
+  },
+  "git": {
+    "version": "2.39.2 (Apple Git-143)",
+    "gitUserEmail": "lisss17@mail.ru",
+    "uncommittedHash": "d6e35ca9a9d432185077b9aec8d0a54bbaa22860",
+    "commit": "2b53c11b4ffeffd5a17c88f0f85d7393ca88c2e6",
+    "committedAt": 1724403985000,
+    "committerEmail": "lisss17@mail.ru",
+    "committerName": "Roman Bondarchuk",
+    "branch": "main",
+    "slug": "romkalis/react-ts-todolist",
+    "fromCI": false,
+    "parentCommits": [
+      "2b53c11b4ffeffd5a17c88f0f85d7393ca88c2e6"
+    ],
+    "baselineCommits": [
+      "2b53c11b4ffeffd5a17c88f0f85d7393ca88c2e6"
+    ],
+    "changedFiles": null,
+    "replacementBuildIds": null
+  },
+  "input": [],
+  "isOnboarding": false,
+  "isPublishOnly": false,
+  "options": {
+    "fromCI": false,
+    "inAction": false,
+    "dryRun": false,
+    "debug": true,
+    "autoAcceptChanges": false,
+    "exitZeroOnChanges": true,
+    "exitOnceUploaded": false,
+    "diagnosticsFile": "chromatic-diagnostics.json",
+    "fileHashing": true,
+    "interactive": false,
+    "isLocalBuild": true,
+    "originalArgv": [],
+    "onlyChanged": true,
+    "logFile": "chromatic.log",
+    "skip": false,
+    "forceRebuild": true,
+    "zip": true,
+    "skipUpdateCheck": true,
+    "buildScriptName": "build-storybook",
+    "storybookLogFile": "build-storybook.log",
+    "branchName": "",
+    "projectId": "Project:66cdbb7735e7c2f702960585",
+    "experimental_abortSignal": {}
+  },
+  "packageJson": {
+    "name": "todolist",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc && vite build",
+      "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+      "preview": "vite preview",
+      "test": "vitest",
+      "storybook": "storybook dev -p 6006",
+      "build-storybook": "storybook build"
+    },
+    "dependencies": {
+      "@emotion/react": "^11.13.0",
+      "@emotion/styled": "^11.13.0",
+      "@mui/icons-material": "^5.16.6",
+      "@mui/material": "^5.16.6",
+      "@types/react-redux": "^7.1.33",
+      "@types/uuid": "^10.0.0",
+      "react": "^17.0.0 || ^18.0.0",
+      "react-dom": "^17.0.0 || ^18.0.0",
+      "react-redux": "^9.1.2",
+      "redux": "^5.0.1",
+      "uuid": "^10.0.0"
+    },
+    "devDependencies": {
+      "@chromatic-com/storybook": "^1.6.1",
+      "@storybook/addon-essentials": "^8.2.8",
+      "@storybook/addon-interactions": "^8.2.8",
+      "@storybook/addon-links": "^8.2.8",
+      "@storybook/addon-onboarding": "^8.2.8",
+      "@storybook/addon-storysource": "^8.2.9",
+      "@storybook/blocks": "^8.2.8",
+      "@storybook/react": "^8.2.9",
+      "@storybook/react-vite": "^8.2.9",
+      "@storybook/test": "^8.2.8",
+      "@testing-library/jest-dom": "^6.4.8",
+      "@testing-library/react": "^16.0.0",
+      "@types/jest": "^29.5.12",
+      "@types/react": "^18.2.66",
+      "@types/react-dom": "^18.2.22",
+      "@typescript-eslint/eslint-plugin": "^7.2.0",
+      "@typescript-eslint/parser": "^7.2.0",
+      "@vitejs/plugin-react": "^4.2.1",
+      "eslint": "^8.57.0",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-plugin-react-refresh": "^0.4.6",
+      "eslint-plugin-storybook": "^0.8.0",
+      "jsdom": "^24.1.1",
+      "storybook": "^8.2.8",
+      "typescript": "^5.2.2",
+      "vite": "^5.2.0",
+      "vitest": "^2.0.5"
+    },
+    "peerDependencies": {
+      "react": "^17.0.0 || ^18.0.0",
+      "react-dom": "^17.0.0 || ^18.0.0"
+    },
+    "readme": "ERROR: No README data found!",
+    "_id": "todolist@0.0.0"
+  },
+  "packagePath": "/Users/lis/Sites/todoList/package.json",
+  "runtimeMetadata": {
+    "nodePlatform": "darwin",
+    "nodeVersion": "20.15.1",
+    "packageManager": "npm",
+    "packageManagerVersion": "10.8.1"
+  },
+  "sentinelUrls": [
+    "https://chromatic-builds.s3.us-west-2.amazonaws.com/66cdbb7735e7c2f702960585-hnjeiibojd/.chromatic/files-copied.304240488.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAJVVEQEOBEEPXSNNQ%2F20240827%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240827T115513Z&X-Amz-Expires=1800&X-Amz-Signature=20f480e65d2c29e0b433b06cda34cfe720f4fa920ffbbb9cc539d645f5a8dbe5&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "https://chromatic-builds.s3.us-west-2.amazonaws.com/66cdbb7735e7c2f702960585-hnjeiibojd/.chromatic/zip-unpacked.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAJVVEQEOBEEPXSNNQ%2F20240827%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240827T115513Z&X-Amz-Expires=1980&X-Amz-Signature=43173b458b8cd12792fafa1c4f22d61d23588d943440f121b6e28b000fd92106&X-Amz-SignedHeaders=host&x-id=GetObject"
+  ],
+  "sessionId": "2be1b319-7f8a-4349-ae31-1f8db685c43d",
+  "sourceDir": "/var/folders/2v/wn39lc4s0rz04h23m949ksrm0000gn/T/chromatic--53011-HHpBq2z83Mwu",
+  "startedAt": 1724759722924,
+  "storybook": {
+    "addons": [],
+    "viewLayer": "react",
+    "version": "8.2.9"
+  },
+  "storybookUrl": "https://66cdbb7735e7c2f702960585-hnjeiibojd.chromatic.com/",
+  "task": "snapshot",
+  "turboSnap": {
+    "bailReason": {
+      "invalidChangedFiles": true
+    },
+    "unavailable": true
+  },
+  "uploadedBytes": 16194,
+  "uploadedFiles": 4,
+  "userError": false
+}

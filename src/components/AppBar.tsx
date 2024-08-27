@@ -10,7 +10,7 @@ export const HeaderAppBar = () => {
             <Menu/>
           </IconButton>
           <Typography variant={'h6'}>
-            News
+            Новости
           </Typography>
           <Button color={'inherit'}>  Login</Button>
         </Toolbar>
