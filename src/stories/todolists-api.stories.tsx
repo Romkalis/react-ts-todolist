@@ -29,9 +29,11 @@ export const GetTodoLists = () => {
 
 export const CreateTodoLists = () => {
   const [state, setState] = useState<any>(null);
+
+  const title = 'новый TodoList'
   useEffect(() => {
     // post запрос отличается тем, что в нем указывается payload, обыч но это какой то js объект, указывается сразуц за url
-      todolistsAPI.createTodoLists().then((response) => {
+      todolistsAPI.createTodoLists(title).then((response) => {
       setState(response.data);
     });
   }, []);
@@ -44,7 +46,7 @@ export const CreateTodoLists = () => {
 export const DeleteTodoLists = () => {
   const [state, setState] = useState<any>(null);
   useEffect(() => {
-    const id = 3;
+    const id = '3q';
 
     todolistsAPI.deleteTodolist(id)
       .then((res) => {
@@ -58,7 +60,7 @@ export const DeleteTodoLists = () => {
 export const UpdateTodoLists = () => {
   const [state, setState] = useState<any>(null);
 
-  const id = 5;
+  const id = 'x5';
 
   useEffect(() => {
     todolistsAPI.changeTodolist(id)

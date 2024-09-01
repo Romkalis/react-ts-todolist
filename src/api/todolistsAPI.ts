@@ -33,14 +33,14 @@ export const todolistsAPI = {
     );
   },
 
-  deleteTodolist(id: number) {
+  deleteTodolist(id: string) {
     return axios.delete(
       `https://jsonplaceholder.typicode.com/todos/${id}`,
       axiosSettings
     );
   },
 
-  changeTodolist(id: number) {
+  changeTodolist(id: string) {
     return axios.put(
       `https://jsonplaceholder.typicode.com/todos/${id}`,
       { id: id, title: "Changed ToDo" },
