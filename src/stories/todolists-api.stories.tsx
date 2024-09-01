@@ -61,28 +61,34 @@ export const CreateTodoLists = () => {
 
 
 
-// export const DeleteTodoLists = () => {
-//   const [state, setState] = useState<any>(null);
-//   useEffect(() => {
+export const DeleteTodoLists = () => {
+  const [state, setState] = useState<any>(null);
+  useEffect(() => {
 
+    const id = 3;
 
-//     // зедсь делаем запрос и ответ забрасыяваем в стейт
-//     // дальше будем отображдать его на странице
-//   }, []);
+        axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`, axiosSettings)
+            .then(res => {
+                setState(res.data)
+            })
+  }, []);
 
-//   return <div>{JSON.stringify(state)}</div>;
-// };
+  return <div>{JSON.stringify(state)}</div>;
+};
 
-// export const UpdateTodoLists = () => {
-//   const [state, setState] = useState<any>(null);
-//   useEffect(() => {
+export const UpdateTodoLists = () => {
+  const [state, setState] = useState<any>(null);
 
-//     axios.put("https://jsonplaceholder.typicode.com/todos", { id: 5, title: 'Changed ToDo' } ,axiosSettings)
-//     .then( response => {
-//         setState(response.data)
-//     })
+  const id = 5;
 
-//   }, []);
+  useEffect(() => {
 
-//   return <div>{JSON.stringify(state)}</div>;
-// };
+    axios.put(`https://jsonplaceholder.typicode.com/todos/${id}`, { id: id, title: 'Changed ToDo' } ,axiosSettings)
+    .then( response => {
+        setState(response.data)
+    })
+
+  }, []);
+
+  return <div>{JSON.stringify(state)}</div>;
+};
