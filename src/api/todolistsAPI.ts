@@ -1,5 +1,14 @@
 import axios from "axios";
 
+
+ export  type TodolistType = {
+    userId?: number;
+    id:  number;
+    title: string;
+    completed?: boolean
+ }
+
+
 const axiosSettings = {
   withCredentials: true, // настройка добавит к запросу куки из браузера
   headers: {
@@ -10,22 +19,20 @@ const axiosSettings = {
 
 export const todolistsAPI = {
   getTodolists() {
-    let promise = axios.get(
-      "https://social-network.samuraijs.com/api/1.1/todo-lists",
-      axiosSettings
-    );
     // let promise = axios.get(
-    //   "https://jsonplaceholder.typicode.com/todos",
+    //   "https://social-network.samuraijs.com/api/1.1/todo-lists",
     //   axiosSettings
     // );
-
-    return promise;
+    return axios.get < Array <TodolistType> > (
+      "https://jsonplaceholder.typicode.com/todos",
+      axiosSettings
+    );
   },
 
   createTodoLists(payload: string) {
-    return axios.post(
-      "https://social-network.samuraijs.com/api/1.1/todo-lists",
-      // "https://jsonplaceholder.typicode.com/todos",
+    return axios.post<TodolistType>(
+    //   "https://social-network.samuraijs.com/api/1.1/todo-lists",
+      "https://jsonplaceholder.typicode.com/todos",
       {
         title: payload,
       },
