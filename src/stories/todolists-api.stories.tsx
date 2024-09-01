@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { todolistsAPI } from "../api/todolistsAPI";
 
 export default {
   title: "API",
@@ -16,14 +17,8 @@ const axiosSettings = {
 export const GetTodoLists = () => {
   const [state, setState] = useState<any>({ name: "1Roman" });
   useEffect(() => {
-    let promise = axios.get(
-      "https://social-network.samuraijs.com/api/1.1/todo-lists",
-      axiosSettings
-    );
-    // let promise = axios.get(
-    //   "https://jsonplaceholder.typicode.com/todos",
-    //   axiosSettings
-    // );
+    let promise = todolistsAPI.getTodolists();
+
     promise.then((responce) => {
       setState(responce.data);
       console.log(state);
@@ -36,41 +31,25 @@ export const CreateTodoLists = () => {
   const [state, setState] = useState<any>(null);
   useEffect(() => {
     // post запрос отличается тем, что в нем указывается payload, обыч но это какой то js объект, указывается сразуц за url
-    axios
-      .post(
-        "https://social-network.samuraijs.com/api/1.1/todo-lists",
-        // "https://jsonplaceholder.typicode.com/todos",
-        {
-          title: "Todo List номер раз, два",
-        },
-
-        axiosSettings
-      )
-      .then((response) => {
-
-        setState(response.data)
-        
-      });
+      todolistsAPI.createTodoLists().then((response) => {
+      setState(response.data);
+    });
   }, []);
 
   return <div>{JSON.stringify(state)}</div>;
 };
 
-
 // не связывается с сервером it-kamasutra // cors Error
-
-
 
 export const DeleteTodoLists = () => {
   const [state, setState] = useState<any>(null);
   useEffect(() => {
-
     const id = 3;
 
-        axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`, axiosSettings)
-            .then(res => {
-                setState(res.data)
-            })
+    todolistsAPI.deleteTodolist(id)
+      .then((res) => {
+        setState(res.data);
+      });
   }, []);
 
   return <div>{JSON.stringify(state)}</div>;
@@ -82,12 +61,10 @@ export const UpdateTodoLists = () => {
   const id = 5;
 
   useEffect(() => {
-
-    axios.put(`https://jsonplaceholder.typicode.com/todos/${id}`, { id: id, title: 'Changed ToDo' } ,axiosSettings)
-    .then( response => {
-        setState(response.data)
-    })
-
+    todolistsAPI.changeTodolist(id)
+      .then((response) => {
+        setState(response.data);
+      });
   }, []);
 
   return <div>{JSON.stringify(state)}</div>;
